@@ -4,10 +4,8 @@ pipeline {
     environment {
         // Set any environment variables needed for your build
         GITHUB_USER = 'EduardoLuisLousinha'
-        GITHUB_TOKEN = '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'
+        GITHUB_TOKEN = credentials('your-github-token-credential-id')
         GITHUB_REPO = 'EduardoLuisLousinha/Repo-For-Testing-Jenkins'
-        CMAKE_HOME = tool 'CMake'
-        COMPILER = 'g++' // Change this to your C++ compiler (e.g., 'clang++' or 'g++')
     }
 
     stages {
@@ -17,17 +15,6 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('Build') {
-            steps {
-                // Create a build directory
-                dir('build') {
-                    // Configure and build the C++ project using CMake
-                    sh "${CMAKE_HOME}/bin/cmake -DCMAKE_CXX_COMPILER=${COMPILER} .."
-                    sh "${CMAKE_HOME}/bin/cmake --build ."
-                }
-            }
-        }
     }
 
     post {
@@ -35,12 +22,6 @@ pipeline {
             // If the build is successful, set GitHub commit status to success
             script {
                 updateGitHubCommitStatus('SUCCESS', 'Build successful')
-            }
-        }
-        failure {
-            // If the build fails, set GitHub commit status to failure
-            script {
-                updateGitHubCommitStatus('FAILURE', 'Build failed')
             }
         }
     }
