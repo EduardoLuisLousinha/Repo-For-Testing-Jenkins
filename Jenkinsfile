@@ -3,6 +3,9 @@ pipeline {
 
     environment {
         // Set any environment variables needed for your build
+        GITHUB_USER = 'EduardoLuisLousinha'
+        GITHUB_TOKEN = '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'
+        GITHUB_REPO = 'EduardoLuisLousinha/Repo-For-Testing-Jenkins'
         CMAKE_HOME = tool 'CMake'
         COMPILER = 'g++' // Change this to your C++ compiler (e.g., 'clang++' or 'g++')
     }
