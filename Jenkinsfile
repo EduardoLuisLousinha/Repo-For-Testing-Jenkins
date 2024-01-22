@@ -18,11 +18,8 @@ pipeline {
     }
 
     post {
-        success {
-            // If the build is successful, set GitHub commit status to success
-            script {
-                updateGitHubCommitStatus('SUCCESS', 'Build successful')
-            }
+        script {
+            updateGitHubCommitStatus('SUCCESS', 'Build successful')
         }
     }
 }
