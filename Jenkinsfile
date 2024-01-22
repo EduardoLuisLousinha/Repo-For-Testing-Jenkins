@@ -30,11 +30,11 @@ pipeline {
 def updateGitHubCommitStatus(String status, String description) {
     script {
         // Get the GitHub commit hash
-        def commitHash = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+        def commitHash = bat(script: 'git rev-parse HEAD', returnStdout: true).trim()
 
         // Update GitHub commit status
         echo "Updating GitHub commit status to ${status}"
-        sh """
+        bat """
             curl -u ${env.GITHUB_USER}:${env.GITHUB_TOKEN} \\
             -H "Accept: application/vnd.github.v3+json" \\
             -d '{"state": "${status}", "description": "${description}", "context": "Jenkins"}' \\
