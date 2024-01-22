@@ -21,7 +21,7 @@ pipeline {
         success {
             // If the build is successful, set GitHub commit status to success
             script {
-                updateGitHubCommitStatus('SUCCESS', 'Build successful')
+                updateGitHubCommitStatus('success', 'Build successful')
             }
         }
     }
@@ -34,6 +34,6 @@ def updateGitHubCommitStatus(String status, String description) {
 
         // Update GitHub commit status
         echo "Updating GitHub commit status to ${status}"
-        bat "curl -u ${env.GITHUB_USER}:${env.GITHUB_TOKEN} -H 'Accept: application/vnd.github.v3+json' -d '{"state": "${status}", "description": "${description}", "context": "Jenkins"}' -X POST 'https://api.github.com/repos/${env.GITHUB_REPO}/statuses/${commitHash}'"
+        bat "curl.exe -u ${env.GITHUB_USER}:${env.GITHUB_TOKEN} -H 'Accept: application/vnd.github.v3+json' -d '{""state"": ""${status}"", ""description"": ""${description}"", ""context"": ""Jenkins""}' -X POST 'https://api.github.com/repos/${env.GITHUB_REPO}/statuses/${commitHash}'"
     }
 }
