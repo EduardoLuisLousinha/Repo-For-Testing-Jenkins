@@ -32,6 +32,10 @@ def updateGitHubCommitStatus(String status, String description) {
         // Get the GitHub commit hash
         def commitHash = bat(script: 'git rev-parse HEAD', returnStdout: true).trim()
         echo "Raw Commit Hash: '${commitHash}'"
+        // Split the output by whitespace and take the last element as the commit hash
+        def commitHash = commitHashResult.split(/\s+/).last()
+        // Debugging: Print the commit hash
+        echo "Extracted Commit Hash: '${commitHash}'"
 
         // Update GitHub commit status
         echo "Updating GitHub commit status to ${status}"
