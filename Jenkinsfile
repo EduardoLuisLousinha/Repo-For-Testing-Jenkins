@@ -30,8 +30,8 @@ pipeline {
 def updateGitHubCommitStatus(String status, String description) {
     script {
         // Get the GitHub commit hash
-        //def commitHash = bat(script: 'git rev-parse HEAD', returnStdout: true).trim()
-        def commitHash = "e700f5de47f45c6b9b499f947414c28b46f0e014"
+        def commitHash = bat(script: 'git rev-parse HEAD', returnStdout: true).trim()
+        echo "Raw Commit Hash: '${commitHash}'"
 
         // Update GitHub commit status
         echo "Updating GitHub commit status to ${status}"
