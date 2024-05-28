@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Set any environment variables needed for your build
         GITHUB_USER = 'EduardoLuisLousinha'
-        GITHUB_TOKEN = credentials('208e71ff-7128-47e2-b9c9-3057a464ed99')
+        GITHUB_TOKEN = credentials('9577eb0f-fa78-4822-a760-9468ddc1f4ef')
         GITHUB_REPO = 'EduardoLuisLousinha/Repo-For-Testing-Jenkins'
     }
 
