@@ -1,0 +1,385 @@
+country_event = {
+	id = 501
+	title = "Assimilation"
+	desc = "The opportunity has arisen that we can better integrate our minorities and extranationals. What shall we do?"
+	picture = "census"
+		
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "Finally! They'll become perfect, just like us!"
+		any_owned = {
+				limit = {
+					is_core = THIS
+				}
+			remove_province_modifier = cheat_assimilation
+			add_province_modifier = {
+				name = cheat_assimilation
+				duration = 1824
+			}
+		}	
+	}
+	option = {
+		name = "Convert EVERYONE!!"
+		any_owned = {
+			remove_province_modifier = cheat_assimilation
+			add_province_modifier = {
+				name = cheat_assimilation
+				duration = 1824
+			}
+		}
+	}
+	option = {
+		name = "But I actually like the diversity..."
+		
+	}
+}
+
+country_event = {
+	id = 502
+	title = "Baby boom"
+	desc = "For some reason or another, our people breed like rabbits. Do we want this?"
+	picture = "emigration"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "Yes! More future labour!"
+		add_country_modifier = {
+			name = cheat_pops
+			duration = 1824	
+		}
+	}
+	option = {
+		name = "Yes, but just on our mainland."
+		any_owned = {
+				limit = {
+					is_core = THIS
+				}
+				
+			add_province_modifier = {
+				name = small_baby_boom
+				duration = 1824
+			}
+		}	
+	}
+	option = {
+		name = "Prevent the undesireables from getting one over us."
+		any_owned = {
+				limit = {
+					is_accepted_culture = yes
+				}
+				
+			add_province_modifier = {
+				name = small_baby_boom
+				duration = 1824
+			}
+		}	
+	}
+	option = {
+		name = "No, thanks. We're full as it is."
+		
+	}
+}
+
+country_event = {
+	id = 503
+	title = "A Nation of Academics"
+	desc = "We don't really know why, but lately we've been finding people more and more receptive to literacy programmes. Not only that, but our universities are producing research papers at a surprising rate. What could this mean?"
+	picture = "Nobel_Literature"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "How wonderful the product of progress is."
+		add_country_modifier = {
+			name = cheat_edu
+			duration = 3649
+		}
+		add_country_modifier = {
+			name = cheat_res
+			duration = 3649
+		}
+	}
+	option = {
+		name = "I wish to keep this forever."
+		add_country_modifier = {
+			name = cheat_edu
+			duration = -1
+		}
+		add_country_modifier = {
+			name = cheat_res
+			duration = -1
+		}
+	}
+	option = {
+		name = "No. I don't want this."
+		
+	}
+}
+
+country_event = {
+	id = 504
+	title = "Greater Influence"
+	desc = "We've been having good fortune in our geopolitical projects. How should we use it?"
+	picture = "Smithsonian"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "Let's make a long term investment."
+		add_country_modifier = {
+			name = cheat_influence_long
+			duration = 3649
+		}
+	}
+
+	option = {
+		name = "I need something done now."
+		add_country_modifier = {
+			name = cheat_influence_short
+			duration = 1824
+		}
+	}
+
+	option = {
+		name = "This'd be really good if we could keep it going endlessly."
+		add_country_modifier = {
+			name = cheat_influence_short
+			duration = -1
+		}
+		add_country_modifier = {
+			name = cheat_influence_long
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "You know, not all investments have to be collected."
+
+	}
+}
+
+country_event = {
+	id = 505
+	title = "Migration Wave"
+	desc = "A new migrant wave arives at our country! They surely come to work, prosper and assimilate!"
+	picture = "emigration"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "What are you waiting for?! Let them in!"
+		add_country_modifier = {
+			name = cheat_imigration
+			duration = 1824
+		}
+	}
+	option = {
+		name = "Oh, Jives, send them away!"
+		
+	}
+}
+
+country_event = {
+	id = 506
+	title = "Warmongering"
+	desc = "Both our populace and our politicians are really spoiling for a fight! Some suggest that we should harness this energy into something actuable. What do you think?"
+	picture = "communist_riot"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "To arms, patriots! Cast down our enemies!"
+		add_country_modifier = {
+			name = cheat_cb_generation
+			duration = 100
+		}
+	}
+	
+	option = {
+		name = "Fight? Fight who?! Are you crazy?!"
+	}
+}
+
+country_event = {
+	id = 507
+	title = "A Free Pass"
+	desc = "Our efforts of denial, misdirection, relativisation, and whattaboutism are bearing fruit. Our unsavory actions in the international scene are either being intentionally ignored, or going completely unnoticed altogether."
+	picture = "Smithsonian"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "We really have to thank our diplomats."
+		badboy = -10
+	}
+
+	option = {
+		name = "This should wipe all of our debts."
+		badboy = -100
+	}
+	
+	option = {
+		name = "I'm not a vatnik! Stop doing that!"
+	}
+}
+
+country_event = {
+	id = 508
+	title = "Calming Tensions"
+	desc = "The country seems to be calming down. Everyone is less militant about their concerns and less conscientious about the political world as a whole."
+	picture = "Administration"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "That's a weight off our shoulders."
+		any_pop = {
+			consciousness = -2
+			militancy = -2
+		}
+	}
+	
+	option = {
+		name = "Are you sure you're reporting the same census?"
+	}
+	
+	option = {
+		name = "But what if we made it worse?"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+	}
+}
+
+country_event = {
+	id = 509
+	title = "House Shift"
+	desc = "An opportunity has presented itself in a way that allows us to significantly boost the control any certain party holds in the Upper House. How should we proceed?"
+	picture = "deliberation"
+	
+	trigger = {
+		has_global_flag = this_event_will_never_trigger
+	}
+	
+	option = {
+		name = "Things are fine as they are. (Conservatives)"
+		upper_house = {
+			ideology = conservative
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Some reform is necessary. (Liberals)"
+		upper_house = {
+			ideology = liberal
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Reform is not enough! Revolution! (Socialists)"
+		upper_house = {
+			ideology = socialist
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Society has degenerated too far. (Reactionaries)"
+		upper_house = {
+			ideology = reactionary
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Perhaps we need a final solution. (Fascists)"
+		upper_house = {
+			ideology = fascist
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Empower the oligarchs. (Anarcho-Liberals)"
+		upper_house = {
+			ideology = anarcho_liberal
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "Dark forces have already made their move. (Communists)"
+		upper_house = {
+			ideology = communist
+			value = 0.2
+		}
+	}
+	
+	option = {
+		name = "But wouldn't this contradict the point of democracy?"
+	}
+}
+
+
+
+
+cheat_assimilation = {
+	assimilation_rate = 1.5
+	icon = 17
+}
+
+cheat_pops = {
+	global_population_growth = 0.06
+	icon = 17
+}
+
+cheat_edu = {
+	education_efficiency_modifier = 2.0
+	icon = 5
+}
+
+cheat_res = {
+	research_points_modifier = 2.0
+	icon = 5
+}
+
+cheat_imigration = {
+	global_immigrant_attract = 5
+	icon = 17
+}
+
+cheat_cb_generation = {
+	cb_generation_speed_modifier = 5
+	icon = 17
+}
+
+cheat_influence_long = {
+	influence_modifier = 0.5
+	icon = 5
+}
+
+cheat_influence_short = {
+	influence_modifier = 2
+	icon = 5
+}
